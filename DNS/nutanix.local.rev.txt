@@ -1,0 +1,19 @@
+$TTL 86400
+@ IN SOA ocp-cluster.nutanix.local. admin.nutanix.local. (
+    2024061302 ;Serial
+    3600 ;Refresh
+    1800 ;Retry
+    604800 ;Expire
+    86400 ;Minimum TTL
+)
+
+;Name Server Information
+    IN NS ns1.nutanix.local.
+
+;Reverse lookup for Name Server (10.11.1.63)
+63  IN PTR ns1.nutanix.local.
+
+;PTR Records for OpenShift (matching forward zone IPs)
+43  IN PTR api.ocp-cluster.nutanix.local.
+43  IN PTR api-int.ocp-cluster.nutanix.local.
+43  IN PTR ocp-cluster.nutanix.local.

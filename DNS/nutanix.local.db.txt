@@ -1,0 +1,28 @@
+$TTL 86400
+@ IN SOA ocp-cluster.nutanix.local. admin.nutanix.local. (
+    2024061302 ;Serial
+    3600 ;Refresh
+    1800 ;Retry
+    604800 ;Expire
+    86400 ;Minimum TTL
+)
+
+;Name Server Information
+@       IN NS   ns1.nutanix.local.
+
+;Add A record for the zone apex (ocp-cluster.nutanix.local)
+@       IN A    10.11.1.43
+
+;IP for Name Server
+ns1     IN A    10.11.1.63
+
+;OpenShift API endpoints
+api     IN A    10.11.1.42
+api-int IN A    10.11.1.42
+
+;OpenShift applications wildcard
+*.apps  IN A    10.11.1.43
+
+;Additional services
+airgap   IN A   10.10.20.2
+registry IN A   10.10.20.50
